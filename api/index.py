@@ -7,6 +7,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        message = cow.Cowacter().milk('Hello from Python from a Serverless Function!')
+        f = open("requirements.txt", "r")
+        message = cow.Cowacter().milk(f.read())
         self.wfile.write(message.encode())
         return
