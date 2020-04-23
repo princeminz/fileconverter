@@ -8,7 +8,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        f = open("requirements.txt", "r")
         message = cow.Cowacter().milk(os.system('ls'))
         self.wfile.write(message.encode())
         return
