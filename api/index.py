@@ -1,3 +1,4 @@
+import os
 from http.server import BaseHTTPRequestHandler
 from cowpy import cow
 
@@ -8,6 +9,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/plain')
         self.end_headers()
         f = open("requirements.txt", "r")
-        message = cow.Cowacter().milk(f.read())
+        message = cow.Cowacter().milk(os.system('ls'))
         self.wfile.write(message.encode())
         return
