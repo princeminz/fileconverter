@@ -8,7 +8,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        print(os.system('/var/task/api/bin/x2t'))
+        print(os.system('dir'))
         message = os.path.dirname(os.path.realpath(__file__))
         self.wfile.write(message.encode())
         return
